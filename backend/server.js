@@ -3,7 +3,7 @@ import express, { json } from "express";
 const app = express();
 
 app.get("/api/test", (req, res) => {
-  res.status(200).send("Test succccess senpai 🔥🔥");
+  res.status(200).send("Test succccess senpai 🔥");
 });
 
 app.post("/api/test", (res, req) => {
