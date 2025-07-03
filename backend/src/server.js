@@ -11,7 +11,9 @@ const PORT = process.env.PORT || 5001
 
 connectToDb()
 
-app.use("/api/test", postRoutes)
+app.use(express.json())
+
+app.use("/api/notes", postRoutes)
 
 app.listen(PORT, () => {
   console.log("Port is successfully activated", PORT);
