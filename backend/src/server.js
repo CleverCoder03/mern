@@ -1,7 +1,9 @@
 import express from "express";
-import postRoutes from "./routes/postRoutes.js"
-import { connectToDb } from "./config/db.js";
 import dotenv from "dotenv"
+import cors from "cors"
+
+import { connectToDb } from "./config/db.js";
+import postRoutes from "./routes/postRoutes.js"
 import rateLimiter from "./middleware/rateLimiter.js";
 
 
@@ -13,6 +15,7 @@ const PORT = process.env.PORT || 5001
 connectToDb()
 
 app.use(express.json())
+app.use(cors())
 app.use(rateLimiter)
 
 app.use("/api/notes", postRoutes)
